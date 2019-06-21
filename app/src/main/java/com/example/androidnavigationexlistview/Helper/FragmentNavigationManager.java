@@ -24,6 +24,7 @@ public class FragmentNavigationManager implements NavigationManager {
         this.mainActivity = mainActivity;
         mFragmentManager = mainActivity.getSupportFragmentManager();
 
+
     }
 
     @Override
