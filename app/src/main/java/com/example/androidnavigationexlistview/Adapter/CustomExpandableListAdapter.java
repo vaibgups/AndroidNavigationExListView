@@ -42,6 +42,13 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
+       /* if (listItem.get(listTitle.get(groupPosition)) == null) {
+            return 0;
+        }
+        else {
+            return listItem.get(listTitle.get(groupPosition))
+                    .size();
+        }*/
         return listItem.get(listTitle.get(groupPosition)).get(childPosition);
     }
 

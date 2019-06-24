@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private List<String> lstTile;
     private Map<String,List<String>> lstChild;
     private NavigationManager navigationManager;
+    private int lastExpandedGroupPosition = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,13 +113,37 @@ public class MainActivity extends AppCompatActivity {
         expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
             @Override
             public void onGroupExpand(int groupPosition) {
+               /* if(groupPosition != lastExpandedGroupPosition){
+                    expandableListView.collapseGroup(lastExpandedGroupPosition);
+                }
+
+                super.onGroupExpanded(groupPosition);
+                lastExpandedGroupPosition = groupPosition;*/
+
+                for(int i=0;i<lstTile.size();i++){
+                    if(i==groupPosition){
+                        //do nothing
+                    }
+                    else{
+                            expandableListView.collapseGroup(i);
+                        }
+                    }
+
+
                 getSupportActionBar().setTitle(lstTile.get(groupPosition).toString()); // set title for Toolbar when open
             }
         });
 
+        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+                return false;
+            }
+        });
         expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
             @Override
             public void onGroupCollapse(int groupPosition) {
+
                 getSupportActionBar().setTitle("Vaibhav");
             }
         });
@@ -193,5 +218,14 @@ public class MainActivity extends AppCompatActivity {
         if (actionBarDrawerToggle.onOptionsItemSelected(item))
             return true;
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 }

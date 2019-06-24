@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+
+    <item
+        android:id="@+id/nav_fullScore"
+        android:title="Full Financial Score" />
+    <item
+        android:id="@+id/nav_qtrScore"
+        android:title="Quaterly Based Score" />
 </menu>
