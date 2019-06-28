@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:openDrawer="left">
 
     <LinearLayout
         android:id="@+id/activity_controller"
@@ -26,9 +27,8 @@
         android:id="@+id/navList"
         android:background="@android:color/white"
         android:divider="@color/dividerColor"
-        android:dividerHeight="0.5dp"
+        android:dividerHeight="1dp"
 
-        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
         ></ExpandableListView>
 
 </android.support.v4.widget.DrawerLayout>

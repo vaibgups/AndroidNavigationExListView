@@ -12,8 +12,10 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import com.example.androidnavigationexlistview.Adapter.CustomExpandableListAdapter;
 import com.example.androidnavigationexlistview.Helper.FragmentNavigationManager;
@@ -137,6 +139,11 @@ public class MainActivity extends AppCompatActivity {
         expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+                    if (lstChild.get(lstTile.get(groupPosition)) == null) {
+                        Toast.makeText(MainActivity.this, "Test press", Toast.LENGTH_SHORT).show();
+                    }
+
+
                 return false;
             }
         });
@@ -184,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i(TAG, "genData: "+temp);
         lstTile = new ArrayList<>(lstChild.keySet());
+
 
     }
 

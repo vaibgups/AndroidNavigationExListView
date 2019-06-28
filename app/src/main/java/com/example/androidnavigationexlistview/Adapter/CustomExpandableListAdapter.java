@@ -27,12 +27,18 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getGroupCount() {
-        return listItem.size();
+        return listTitle.size();
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return listTitle.size();
+//        return listItem.size();
+
+        if (this.listItem.get(this.listTitle.get(groupPosition)) == null)
+            return 0;
+        else
+            return this.listItem.get(this.listTitle.get(groupPosition))
+                    .size();
     }
 
     @Override
@@ -67,12 +73,18 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         return false;
     }
 
+
+
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         String title = (String) getGroup(groupPosition);
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_group, null);
 
+        }
+
+        if (title == "Test"){
+//            getExpandableListView().setGroupIndicator(null);
         }
 
         TextView txtTitle = (TextView) convertView.findViewById(R.id.listTitle);
