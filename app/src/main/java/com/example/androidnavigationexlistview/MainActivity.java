@@ -236,4 +236,8 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
+    public ExpandableListView getExpandableListView() {
+        return expandableListView;
+    }
 }

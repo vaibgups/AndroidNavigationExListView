@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/main_header_selector">
+    android:background="@drawable/main_header_selector"
+    android:gravity="left"
+    android:layoutDirection="ltr">
     
     
     

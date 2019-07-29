@@ -28,6 +28,7 @@
         android:background="@android:color/white"
         android:divider="@color/dividerColor"
         android:dividerHeight="1dp"
+        android:layoutDirection="rtl"
 
         ></ExpandableListView>
 

@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 
+import com.example.androidnavigationexlistview.MainActivity;
 import com.example.androidnavigationexlistview.R;
 
 import java.util.List;
@@ -83,9 +85,13 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 
         }
 
-        if (title == "Test"){
+        /*if (title == "Test"){
 //            getExpandableListView().setGroupIndicator(null);
-        }
+                MainActivity mainActivity = (MainActivity) context;
+                ExpandableListView expandableListView = mainActivity.getExpandableListView();
+                expandableListView.setGroupIndicator(null);
+
+        }*/
 
         TextView txtTitle = (TextView) convertView.findViewById(R.id.listTitle);
         txtTitle.setTypeface(null, Typeface.BOLD);
